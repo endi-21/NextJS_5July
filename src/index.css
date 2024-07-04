@@ -1,0 +1,19 @@
+.navbar {
+    background: linear-gradient(to right, #8134af,#dd2a7b,#f58529);
+}
+
+.navbar .nav-link {
+    color: white !important;
+}
+
+body{
+    background-color: #1c1c1c;
+}
+
+.card{
+    margin: 2rem 0.8rem;
+}
+
+.users-container{
+    display: flex;
+}
