@@ -56,10 +56,14 @@ body{
     margin-bottom: 1%;    
 }
 
-.search-btn-api{
+.btn-api{
     border: none;
     border-radius: 5px;
     background: linear-gradient(to right, #8134af,#dd2a7b,#f58529);
     color: white;
     padding: 0.5% 1%;
+}
+
+.make-gray{
+    color: gray;
 }
