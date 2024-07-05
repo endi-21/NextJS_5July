@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: #1c1c1c;
+    background-color: #333335;
 }
 
 .card{
@@ -16,4 +16,37 @@ body{
 
 .users-container{
     display: flex;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+.card {
+    margin: 20px;
+}
+
+.error {
+    color: red; 
+    margin-top: 2rem; 
+    font-size: 1.5em; 
+}
+
+.navbar ul{
+    font-size: 1.5em; 
+}
+
+.nav-item{
+    padding: 0;
+    margin-left: 1.5rem;
+}
+
+.search-user-container input{
+    border-radius: 2px;
+    border: none;
+    padding: 1%;    
 }

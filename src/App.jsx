@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Display from './Components/Display';
 import SearchUser from './Components/SearchUser';
 
-
 function App() {
 
 	const [users, setUsers] = useState([]);
@@ -18,6 +17,7 @@ function App() {
 
 				<Routes>
 					<Route path="/" element={<Display users={users} setUsers={setUsers} />} />
+					
 					<Route path="/searchPage" element={<SearchUser />} />
 					
 				</Routes>

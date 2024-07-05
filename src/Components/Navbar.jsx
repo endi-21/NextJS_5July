@@ -20,6 +20,7 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link to="/searchPage" className="nav-link">Search</Link>
                         </li>
+                        
                     </ul>
                 </div>
             </div>
