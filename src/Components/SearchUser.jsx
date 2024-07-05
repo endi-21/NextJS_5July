@@ -32,7 +32,7 @@ const SearchUser = () => {
     };
 
     return (
-        <div className="mt-4 text-center search-user-container">
+        <div className="mt-5 text-center search-user-container">
             <input
                 type="text"
                 placeholder="Enter Instagram username"
@@ -40,7 +40,7 @@ const SearchUser = () => {
                 onChange={(e) => setUsername(e.target.value)}
             />
             <br/>
-            <button onClick={handleSearch}>Search</button>
+            <button className='search-btn-api' onClick={handleSearch}>Search</button>
 
             {error && <p className='error'>{error}</p>}
 

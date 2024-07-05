@@ -45,8 +45,21 @@ body{
     margin-left: 1.5rem;
 }
 
+.search-user-container{
+    font-size: larger;
+}
+
 .search-user-container input{
-    border-radius: 2px;
+    border-radius: 5px;
     border: none;
-    padding: 1%;    
+    padding: 0.7% 1.5%;
+    margin-bottom: 1%;    
+}
+
+.search-btn-api{
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #8134af,#dd2a7b,#f58529);
+    color: white;
+    padding: 0.5% 1%;
 }
