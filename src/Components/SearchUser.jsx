@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import UserCard from './UserCard';
 
-const SearchUser = (props) => {
-    const { users, setUsers } = props;
-
+const SearchUser = ({ users, setUsers }) => {
     const [username, setUsername] = useState('');
     const [userData, setUserData] = useState(null);
     const [error, setError] = useState('');
@@ -21,7 +19,7 @@ const SearchUser = (props) => {
 
         try {
             const response = await axios.request(options);
-            setUserData(response.data.data); // Update to access data within the response
+            setUserData(response.data.data);
             setError('');
         } catch (error) {
             setError('User not found');
@@ -40,7 +38,7 @@ const SearchUser = (props) => {
         setUsers([...users, newUser]);
         setError('');
         setUsername('');
-        setUserData(null); // Clear userData instead of setting to an empty string
+        setUserData(null);
     };
 
     return (
@@ -51,7 +49,7 @@ const SearchUser = (props) => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
             />
-            <br/>
+            <br />
             <button className='btn-api' onClick={handleSearch}>Search</button>
 
             {error && <p className='error'>{error}</p>}

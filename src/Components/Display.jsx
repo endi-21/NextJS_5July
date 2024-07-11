@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import UserCard from './UserCard';
 
-const Display = () => {
-    const [users, setUsers] = useState([]);
-
+const Display = ({ users, setUsers }) => {
     const handleDeleteUser = (username) => {
         setUsers(users.filter(user => user.username !== username));
     };
@@ -16,7 +14,8 @@ const Display = () => {
                         key={index}
                         username={user.username}
                         numOfPosts={user.numOfPosts}
-                        handleDelete={handleDeleteUser}
+                        profilePicUrl={user.profilePicUrl}
+                        handleDelete={() => handleDeleteUser(user.username)}
                     />
                 )) : <h1 style={{ color: 'white' }}>There are no users added</h1>}
             </div>
