@@ -5,7 +5,6 @@ import UserCard from './UserCard';
 const SearchUser = (props) => {
     const { users, setUsers } = props;
 
-
     const [username, setUsername] = useState('');
     const [userData, setUserData] = useState(null);
     const [error, setError] = useState('');
@@ -15,14 +14,14 @@ const SearchUser = (props) => {
             method: 'GET',
             url: `https://instagram243.p.rapidapi.com/userinfo/${username}`,
             headers: {
-                'x-rapidapi-key': '9e4ce23415msh7d8fb2d3e558ed7p124c45jsn3bbff691d1ec',
+                'x-rapidapi-key': '840b3ca07cmsh966420a47f5695cp18a5a4jsn894243c252d9',
                 'x-rapidapi-host': 'instagram243.p.rapidapi.com'
             }
         };
 
         try {
             const response = await axios.request(options);
-            setUserData(response.data)
+            setUserData(response.data.data); // Update to access data within the response
             setError('');
         } catch (error) {
             setError('User not found');
@@ -34,16 +33,15 @@ const SearchUser = (props) => {
         e.preventDefault();
 
         const newUser = {
-            username: username,
-            numOfPosts: numOfPosts,
-            profilePicUrl: profilePicUrl
+            username: userData.username,
+            numOfPosts: userData.edge_owner_to_timeline_media.count,
+            profilePicUrl: userData.profile_pic_url
         };
         setUsers([...users, newUser]);
         setError('');
         setUsername('');
-        setUserData('');
+        setUserData(null); // Clear userData instead of setting to an empty string
     };
-
 
     return (
         <div className="mt-5 text-center search-user-container">
