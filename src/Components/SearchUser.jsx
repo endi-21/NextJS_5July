@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import UserCard from './UserCard';
+import { useNavigate } from 'react-router-dom';
+
 
 const SearchUser = ({ users, setUsers }) => {
     const [username, setUsername] = useState('');
     const [userData, setUserData] = useState(null);
     const [error, setError] = useState('');
+    const navigate = useNavigate();
+
 
     const handleSearch = async () => {
         const options = {
@@ -32,13 +36,18 @@ const SearchUser = ({ users, setUsers }) => {
 
         const newUser = {
             username: userData.username,
+            name: userData.full_name,
+            bio: userData.biography,
             numOfPosts: userData.edge_owner_to_timeline_media.count,
-            profilePicUrl: userData.profile_pic_url
+            profilePicUrl: userData.profile_pic_url,
+            followers: userData.edge_followed_by.count,
+            following: userData.edge_follow.count
         };
         setUsers([...users, newUser]);
         setError('');
         setUsername('');
         setUserData(null);
+        navigate(`/`);
     };
 
     return (

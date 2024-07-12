@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: #333335;
+    background-color: #0e1217;
 }
 
 .card{
@@ -66,4 +66,8 @@ body{
 
 .make-gray{
     color: gray;
+}
+
+.make-white{
+    color: white;
 }
