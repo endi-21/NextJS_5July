@@ -31,7 +31,6 @@ export default function UserCard(props) {
             </CardContent>
             <CardActions className='pt-0'>
                 <Button onClick={() => handleDetailsClick()} size="small">Details</Button>
-                <Button size="small">Save</Button>
                 <DeleteConfirm size="small" title={username} handleDelete={handleDelete} />
             </CardActions>
         </Card>
